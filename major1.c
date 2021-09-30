@@ -14,6 +14,7 @@ int main()
         printf("(3) Rotate-right\n");
         printf("(4) Parity\n");
         printf("(5) Exit\n");
+        printf("-->");
 
         scanf("%d", &choice);
 
@@ -25,11 +26,15 @@ int main()
             printf("(2) Endian Swap\n");
             printf("(3) Rotate-right\n");
             printf("(4) Parity\n");
-            printf("(5) Exit\n");
+            printf("(5) Exit\n\n");
+            printf("-->");
 
             scanf("%d", &choice);
         }
 
+        unsigned long int temp;//used for input for function use
+        unsigned long int max = 4294967295;//max value for input
+        int min = 1;//min value for input
         switch(choice)
         {
             case 1:
@@ -43,6 +48,18 @@ int main()
                 break;
             case 4:
                 //Parity function
+                printf("Enter a 32 bit number(>=1 and <=4294967295, inclusively):");
+                scanf("%lu", &temp);
+                //check for correct number
+                if((temp > max) || (temp < min))
+                {
+                    while((temp > max) || (temp < min))
+                    {
+                        printf("Enter a 32 bit number(>=1 and <=4294967295, inclusively):");
+                        scanf("%lu", &temp);
+                    }
+                }
+                parity(temp);
                 break;
             case 5:
                 //exit choice
