@@ -1,6 +1,6 @@
 
-//EUID:bmc0205
 //Name:Brandon Castro
+//This section of code is my contribution to the project in this class, no other function has my contribution other than the main file and the makefile
 #include "major1.h"
 
 void parity(unsigned long int value)
